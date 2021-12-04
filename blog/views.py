@@ -7,6 +7,9 @@ from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import PostForm
+from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView
 from django.views.generic import (
     CreateView,
     ListView,
@@ -19,6 +22,12 @@ from bootstrap_datepicker_plus import TimePickerInput
 from django.views import generic
 
 
+def image(request):
+    carx = Post()
+    variables = RequestContext(request,{
+        'carx':carx
+    })
+    return render_to_response('post_detail.html',variables)
 
 
 
@@ -90,7 +99,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content','chamber']
+    fields = ['title', 'content','chamber','address','fees','days','start_time','end_time','image','review','rating','overall_rating']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -112,6 +121,23 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.author:
             return True
         return False
+
+
+class PostImage(TemplateView):
+    form = PostForm
+    template_name = 'post_detail.html'
+
+    def post(self, request, *args, **kwargs):
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse_lazy('home', kwargs={'pk': pk}))
+        context = self.get_context_data(form=form)
+        return self.render_to_response(context)
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
 
 
 def about(request):

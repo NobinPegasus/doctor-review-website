@@ -8,7 +8,7 @@ from .models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'content','chamber','address','fees','days','start_time','end_time','review','rating','overall_rating']
+        fields = ['title', 'content','chamber','address','fees','days','start_time','end_time','image','review','rating','overall_rating']
 
 
     #     date = forms.DateTimeField(
