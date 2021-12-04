@@ -15,7 +15,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'author', 'date_posted')
     list_display_links = ('id', 'title')
     list_filter = ('author', 'date_posted')
-    search_fields = ('title', 'content', 'author')
+    search_fields = ('title', 'content', 'author','chamber')
     list_per_page = 20
 
 

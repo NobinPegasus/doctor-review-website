@@ -45,7 +45,7 @@ class PostListView(ListView):
             keyword = ''
         if (keyword != ''):
             object_list = self.model.objects.filter(
-                Q(content__icontains=keyword) | Q(title__icontains=keyword))
+                Q(content__icontains=keyword) | Q(title__icontains=keyword) | Q(chamber__icontains=keyword) | Q(address__icontains=keyword))
         else:
             object_list = self.model.objects.all()
         return object_list
@@ -90,7 +90,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'content','chamber']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
