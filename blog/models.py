@@ -7,6 +7,8 @@ from multiselectfield import MultiSelectField
 from django import forms
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django_google_maps import fields as map_fields
+from PIL import Image
+# from django.contrib.auth.models import User
 # from datetime import datetime
 # from django.utils import timezone
 
@@ -58,8 +60,10 @@ class Post(models.Model):
     # hours = models.DateTimeField()
     start_time = models.TimeField('Chamber Beginning Time')
     end_time = models.TimeField('Chamber Ending Time')
+    image = models.ImageField( upload_to='profile_pics')
     review = models.TextField()
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    # user = models.OneToOneField(User, on_delete=models.CASCADE)
+
     # rating = models.ManyToManyField(MyRating)
     rating = models.IntegerField('Behavior')
     overall_rating = models.PositiveIntegerField(validators=[
@@ -79,21 +83,24 @@ class Post(models.Model):
     class Meta:
         ordering = ('-date_posted', )
 
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+    #     return self.title
 
     def get_absolute_url(self):
         return reverse('post_detail', kwargs={'pk': self.pk})
 
-    def save(self, *args, **kwargs):
-        super(Profile, self).save(*args, **kwargs)
+    # def __str__(self):
+    #     return f'{self.title} Post'
 
-        img = Image.open(self.image.path)
+    def save(self):
+        super().save()  # saving image first
 
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
+        img = Image.open(self.image.path) # Open image using self
+
+        if (img.height > 1020 or img.width > 1920):
+            new_img = (1020, 1920)
+            img.thumbnail(new_img)
+            img.save(self.image.path)  # saving image at the same path
 
 
 class Comment(models.Model):
