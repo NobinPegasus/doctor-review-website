@@ -1,12 +1,12 @@
 {% extends "blog/base.html" %}
 {% block content %}
 <!-- Search Form -->
-<form class="form-inline my-2 my-lg-0 pb-2">
-    <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search" style="width: 400px">
+<form class="form-inline my-2 my-lg-0 pb-2" >
+    <input class="form-control mr-sm-2"  name="q" type="search" placeholder="Search" aria-label="Search" style="width: 400px">
     <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
 </form>
     {% for post in posts %}
-        <article class="media content-section" style="width:1100px; margin:0 auto padding:3;">
+        <article class="media content-section" style="width:1100px; margin:0 auto padding:3">
           <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
           <div class="media-body">
             <div class="article-metadata">
@@ -15,10 +15,6 @@
             </div>
           <h2><a class="article-title" href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
             <p class="article-content">{{ post.content|safe }}</p>
-
-
-
-
           </div>
         </article>
     {% endfor %}
