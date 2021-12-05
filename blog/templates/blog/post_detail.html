@@ -2,10 +2,10 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="content-section">
+<div class="content-section" style="width:1100px; margin:0 auto;">
 
     <!-- Author information -->
-    <div class="media">
+    <div class="media" style="width:1100px; margin:0 auto;">
         <img class="d-flex mr-3 rounded-circle article-img" src="{{ object.author.profile.image.url }}" alt="">
         <div class="media-body">
             <h4 class="mt-0"><a href="{% url 'user_posts' object.author.username %}">{{ object.author }}</a></h4>
@@ -16,9 +16,9 @@
 
     <!-- Post information -->
     <div>
-        <h1 class="mt-4">{{object.title}}</h1>
+
         <p>
-            Posted on {{ object.date_posted|date:"F d, Y" }}
+            <b>Posted on {{ object.date_posted|date:"F d, Y" }}</b>
             {% if object.author == user %}
             <a class="btn btn-info btn-sm mt-1 mb-1 float-right" href="{% url 'post_update' object.id %}">Update</a>
             <a class="btn btn-danger btn-sm mt-1 mb-1 float-right mr-2 "
@@ -34,16 +34,50 @@
     <hr>
 
     <!-- Post Content -->
-    <p class="lead">{{ object.content|safe|linebreaks }}</p>
-    <p class="lead">{{ object.chamber|safe|linebreaks }}</p>
-    <p class="lead">{{ object.address|safe|linebreaks }}</p>
-    <p class="lead">{{ object.fees|safe|linebreaks }}</p>
-    <p class="lead">{{ object.days|safe|linebreaks }}</p>
-    <p class="lead">{{ object.start_time|safe|linebreaks }}</p>
-    <p class="lead">{{ object.end_time|safe|linebreaks }}</p>
-    <p class="lead">{{ object.review|safe|linebreaks }}</p>
-    <p class="lead">{{ object.rating|safe|linebreaks }}</p>
-    <p class="lead">{{ object.overall_rating|safe|linebreaks }}</p>
+<style>
+
+p{
+  font-family: Trebuchet MS;
+}
+</style>
+
+<style>
+
+b{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+</style>
+
+    <p class="lead">
+      <label for="fname" align=""><b>Doctor's Name:</b> {{object.title|safe}}</label>
+    </p>
+
+    <p class="lead">
+      <label for="fname" align=""><b>Speciality: </b>{{ object.content|safe}}</label>
+      </p>
+    <p class="lead">
+      <label for="lname" align=""><b>Chamber: </b>{{ object.chamber|safe}}</label>
+      </p>
+    <p class="lead">
+      <label for="aname" align=""><b>Address: </b>{{ object.address|safe}}</label></p>
+    <p class="lead">
+      <label for="slr" align=""><b>Salary: </b>{{ object.fees|safe}}</label></p>
+    <p class="lead">
+      <label for="ds" align=""><b>Available Days: </b>{{ object.days|safe}}</label>
+      </p>
+    <p class="lead">
+      <label for="vname" align=""><b>Visiting Hours: </b>{{ object.start_time|safe}} - {{ object.end_time|safe}}</label>
+    </p>
+    <!-- <p class="lead">{{ object.end_time|safe|linebreaks }}</p> -->
+    <p class="lead">
+      <label for="bv" align=""><b>Behaviour: </b>{{ object.rating|safe}}/5</label>
+    </p>
+    <p class="lead">
+      <label for="rtn" align=""><b>Overall Rating: </b>{{ object.overall_rating|safe}}/10</label></p>
+      <p class="lead">
+        <label for="rvw" align=""><b>Review: </b><br>{{ object.review|safe}}</label>
+      </p>
 
 
     <hr>

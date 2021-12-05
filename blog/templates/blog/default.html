@@ -14,22 +14,14 @@
 
 
 
-   <meta charset="utf-8">
-   <title>Display a popup on click</title>
-
-   <style>
-   body { margin: 100; padding: 0; }
-   #map { position: absolute; top: 10; bottom: 0; width: 100%; }
-   </style>
-   </head>
-   <body>
    <style>
        .mapboxgl-popup {
-           max-width: 400px;
+           max-width: 500px;
+
            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
        }
    </style>
-   <div id="map"></div>
+   <div id="map"  style=' width: 1100px; height: 500px;'>
    <script>
    	mapboxgl.accessToken = 'pk.eyJ1Ijoibm9iaW5wZWdhc3VzIiwiYSI6ImNrd2p1NWpxbjFsZHgyd211ZzA5M2lmc2UifQ.s1a71Frz1UsqhXzP-2nKoA';
        const map = new mapboxgl.Map({
@@ -126,7 +118,7 @@
                            'type': 'Feature',
                            'properties': {
                                'description':
-                                   '<strong>Mount Adora Hospital</strong><p>Mount Adora Hospital is one of the most popular hospitals in Sylhet.It is very helpful for versity\'s student as it is not so far from university.Pediatrics department of this hospital is very proud of their successful record in giving children a healthy start in life.The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=Mount%2BAdora" target="_blank" title="Opens in a new window">review</a> panel</p>',
+                                   '<strong>Mount Adora Hospital</strong><p>Mount Adora Hospital is one of the most popular hospitals in Sylhet.It is very helpful for versity\'s student as it is not so far from university.Pediatrics department of this hospital is very proud of their successful record in giving children a healthy start in life.The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=Mount+adora" target="_blank" title="Opens in a new window">review</a> panel</p>',
                                'icon': 'hospital-15'
                            },
                            'geometry': {
@@ -138,7 +130,7 @@
                            'type': 'Feature',
                            'properties': {
                                'description':
-                                   '<strong>Sylhet Women\'s Medical College</strong><p>Sylhet Women\'s Medical College is a private medical school in Bangladesh, exclusively for female students, established in 2005. Sylhet Women\'s Medical College and Hospital is a teaching and medical facility with 3 high-rise buildings built on 130,000 square feet of land in the heart of Sylhet.It is located inside the campus of the College and  provides the highest standard of medical education and healthcare to the district and the nation.The reviews of doctor\'s of this hospital are given in this. <a href="http://127.0.0.1:8000/?q=Sylhet+Women%27s+Medical+College" target="_blank" title="Opens in a new window">review</a> panel</p>',
+                                   '<strong>Sylhet Women\'s Medical College</strong><p>Sylhet Women\'s Medical College is a private medical school in Bangladesh, exclusively for female students, established in 2005. It is located inside the campus of the College and  provides the highest standard of medical education and healthcare to the district and the nation.The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=Sylhet+women+medical+college" target="_blank" title="Opens in a new window">review</a> panel</p>.',
                                'icon': 'hospital-15'
                            },
                            'geometry': {
@@ -150,7 +142,7 @@
                            'type': 'Feature',
                            'properties': {
                                'description':
-                                   '<strong>JALALABAD RAGIB-RABEYA MEDICAL COLLEGE</strong><p>Jalalabad Ragib-Rabeya Medical College (JRRMC) is a private medical school in Bangladesh, established in 1995. It is located in the Pathantula area of Bimanbandar Thana, in Sylhet. It is affiliated with Shahjalal University of Science and Technology (SUST) under the School of Medical Sciences.JALALABAD RAGIB RABEYA MEDICAL COLLEGE is a well reputated medical hospital. Patients may receive quality treatment with a reasonable price.Students from outside the country come to persue their MBBS degree from this medical college.The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=Jalalabad+Ragib+Rabeya+Medical+College" target="_blank" title="Opens in a new window">review</a> panel</p>',
+                                   '<strong>JALALABAD RAGIB-RABEYA MEDICAL COLLEGE</strong><p>Jalalabad Ragib-Rabeya Medical College (JRRMC) is a private medical school in Bangladesh, established in 1995. It is affiliated with Shahjalal University of Science and Technology (SUST) under the School of Medical Sciences. Jalalabad Ragib Rabeya Medical College is a well reputated medical hospital. Patients may receive quality treatment with a reasonable price. The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=Jalalabad+ragib+rabeya" target="_blank" title="Opens in a new window">review</a> panel</p>',
                                'icon': 'hospital-15'
                            },
                            'geometry': {
@@ -162,7 +154,7 @@
                            'type': 'Feature',
                            'properties': {
                                'description':
-                                   '<strong>North East Cancer Hospital</strong><p>North East Cancer Hospital located in Chandipul, South Surma, Sylhet is a multi-Specially Hospital established in 1998 offering a wide spectrum of advanced Cancer treatments to patients. North east Cancer Hospital has a great team of qualified oncologist available round the clock and also in emergency staff members make sure patients are given the best of medical care.The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=North+East+Cancer+Hospital" target="_blank" title="Opens in a new window">review</a> panel</p>',
+                                   '<strong>North East Medical College and Hospital</strong><p>North East Cancer Hospital located in Chandipul, South Surma, Sylhet. The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=North" target="_blank" title="Opens in a new window">review</a> panel</p>',
                                    'icon': 'hospital-15'
 
                            },
@@ -175,7 +167,7 @@
                            'type': 'Feature',
                            'properties': {
                                'description':
-                                   '<strong>Parkview Medical College & Hospital</strong><p>Parkview Medical College located in Sheikh Ghat,Sylhet. A group of noble dreamers got together by 2008 under the banner of Parkview Health Care Pvt. Ltd. & Associates of Parkview Health Care Pvt. Ltd. As a consequence, Parkview Medical College has opened its door to 1st batch of students of MBBS course from January 2014.This hospital has set up a low cost specialized treatment facility for the common people which will eventually take shape of a centre of excellence in Bangladesh.The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=Parkview+Medical+College+%26+Hospital" target="_blank" title="Opens in a new window">review</a> panel</p>',
+                                   '<strong>Parkview Medical College & Hospital</strong><p>Parkview Medical College located in Sheikh Ghat,Sylhet. This hospital has set up a low cost specialized treatment facility for the common people which will eventually take shape of a centre of excellence in Bangladesh.The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=Parkview" target="_blank" title="Opens in a new window">review</a> panel</p>',
                                'icon': 'hospital-15'
                            },
                            'geometry': {
@@ -187,7 +179,7 @@
                            'type': 'Feature',
                            'properties': {
                                'description':
-                                   '<strong>United Hospital</strong><p>United Hospital Limited was originally called Continental Hospital and was established in the mid 1980s. In 2004, Continental Hospital was purchased by a group of investors, led by United Group and later renamed to United Hospital Limited. It started its journey in August 2016.The first ever endoscopic laser assisted surgery in Bangladesh was performed at United Hospital Limited on 8 November 2015.Radical Cystoprostatectomy with Orthotopic Neobladder Reconstruction Surgery was performed by Dr M A Zulkifl at United Hospital Limited on a 60 year old patient.The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=United+Hospital" target="_blank" title="Opens in a new window">review</a> panel</p>',
+                                   '<strong>United Hospital</strong><p>Opening its doors in August 2006 and situated beside the picturesque Gulshan Lake, this hospital is one of the largest private sector healthcare facilities in Bangladesh. The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=United+hospital" target="_blank" title="Opens in a new window">review</a> panel</p>',
                                'icon': 'hospital-15'
                            },
                            'geometry': {
@@ -199,7 +191,7 @@
                            'type': 'Feature',
                            'properties': {
                                'description':
-                                   '<strong>Evercare Hospital Dhaka</strong><p>Evercare Hospital Dhaka is a private hospital in Bangladesh and Part of Evercare group. It was previously called Apollo Hospital Dhaka.Evercare Hospital Dhaka is a world-class hospital with an aim to establish a close synergy among medical skills, trained manpower, technology and advancements.It is the only JCI Accredited 425-bed multi-disciplinary super-specialty tertiary care hospital in Bangladesh.The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=Evercare+Hospital+Dhaka" target="_blank" title="Opens in a new window">review</a> panel</p>',
+                                   '<strong>Evercare Hospital Dhaka</strong><p>Evercare Hospital Dhaka is a private hospital in Bangladesh and Part of Evercare group. It was previously called Apollo Hospital Dhaka. Evercare Hospital Dhaka is a world-class hospital with an aim to establish a close synergy among medical skills, trained manpower, technology and advancements.It is the only JCI Accredited 425-bed multi-disciplinary super-specialty tertiary care hospital in Bangladesh. The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=Evercare" target="_blank" title="Opens in a new window">review</a> panel</p>',
                                'icon': 'hospital-15'
                            },
                            'geometry': {
@@ -211,7 +203,7 @@
                            'type': 'Feature',
                            'properties': {
                                'description':
-                                   '<strong>Square Hospital Ltd</strong><p>Square Hospital is a private hospital in Dhaka, Bangladesh. This is one of the best and large private hospitals in Bangladesh. SQUARE hospitals have 110 consultation rooms, 400 patient beds, and 3000 Staff.The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=Square+Hospital+Ltd" target="_blank" title="Opens in a new window">review</a> panel</p>',
+                                   '<strong>Square Hospital Ltd</strong><p>This is one of the best and large private hospitals in Bangladesh. SQUARE hospitals have 110 consultation rooms, 400 patient beds, and 3000 Staff.The reviews of doctor\'s of this hospital are given in this <a href="http://127.0.0.1:8000/?q=Square+hospital" target="_blank" title="Opens in a new window">review</a> panel</p>',
                                'icon': 'hospital-15'
                            },
                            'geometry': {
@@ -266,5 +258,5 @@
    </script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-
+</div>
 {% endblock content %}
