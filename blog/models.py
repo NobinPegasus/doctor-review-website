@@ -15,13 +15,13 @@ from PIL import Image
 
 
 DAYS_OF_WEEK = [
-    (0, 'Monday'),
-    (1, 'Tuesday'),
-    (2, 'Wednesday'),
-    (3, 'Thursday'),
-    (4, 'Friday'),
-    (5, 'Saturday'),
-    (6, 'Sunday'),
+    (0, '  Monday'),
+    (1, '  Tuesday'),
+    (2, '  Wednesday'),
+    (3, '  Thursday'),
+    (4, '  Friday'),
+    (5, '  Saturday'),
+    (6, '  Sunday'),
 ]
 
 
@@ -56,7 +56,7 @@ class Post(models.Model):
     address = models.CharField('Address',max_length=100)
     fees = models.IntegerField(default=0)
     # days = models.ManyToManyField(Days)
-    days = MultiSelectField(choices= DAYS_OF_WEEK)
+    days = MultiSelectField('Available Days', choices= DAYS_OF_WEEK)
     # hours = models.DateTimeField()
     start_time = models.TimeField('Chamber Beginning Time')
     end_time = models.TimeField('Chamber Ending Time')
