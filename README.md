@@ -5,4 +5,4 @@
 ## New Post
 [![image.png](https://i.postimg.cc/Y00DvwNB/image.png)](https://postimg.cc/y3qyGtrL)
 
-[![image.png](https://i.postimg.cc/2yw0kt0t/image.png)](https://postimg.cc/m1PYVmf3)
+[![image.png](https://i.postimg.cc/hvjdm3S6/image.png)](https://postimg.cc/jwp20cn4)
