@@ -53,7 +53,7 @@ class Post(models.Model):
     title = models.CharField('Doctor\'s Name',max_length=100)
     content = models.CharField('Specialty',max_length=100)
     chamber = models.CharField('Chamber\'s Name',max_length=200)
-    address = models.CharField('Address',max_length=100)
+    address = models.CharField('Address',max_length=100, blank=True)
     fees = models.IntegerField(default=0)
     # days = models.ManyToManyField(Days)
     days = MultiSelectField('Available Days', choices= DAYS_OF_WEEK)
